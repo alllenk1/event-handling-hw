@@ -45,7 +45,7 @@ const Loader = () => {
         : 
           <img 
             className={cnLoader('Image')} 
-            src="/img/progress.jpeg" 
+            src="./img/progress.jpeg" 
             alt="100% progress" 
             width="400"
           />
