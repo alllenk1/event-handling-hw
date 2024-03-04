@@ -20,7 +20,7 @@ const GameField: FC<GameFieldProps> = ({ start, cockroachs, onClick }) => {
             className={cnGameField('Image')}
             key={index}
             onClick={() => onClick(index)} 
-            src="/img/cockroach.png"
+            src="./img/cockroach.png"
             alt="cockroach" 
             style={{
               top: cockroach.y,
