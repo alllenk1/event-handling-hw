@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/event-handling-hw/static/css/main.30d138b0.css",
+    "main.js": "/event-handling-hw/static/js/main.9addd208.js",
+    "index.html": "/event-handling-hw/index.html",
+    "main.30d138b0.css.map": "/event-handling-hw/static/css/main.30d138b0.css.map",
+    "main.9addd208.js.map": "/event-handling-hw/static/js/main.9addd208.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.30d138b0.css",
+    "static/js/main.9addd208.js"
+  ]
+}
