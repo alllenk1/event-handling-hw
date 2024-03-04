@@ -1,0 +1,12 @@
+.Game {
+  position: relative;
+
+  width: 600px;
+}
+
+.Game-Button {
+  display: block;
+
+  margin: 20px auto;
+  padding: 6px 16px;
+}

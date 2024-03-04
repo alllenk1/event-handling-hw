@@ -1,0 +1,31 @@
+.ProgressBar {
+  position: relative;
+
+  width: 400px;
+  height: 35px;
+
+  border: 1px solid #FF8530;
+  border-radius: 18px;
+
+  overflow: hidden;
+}
+
+.ProgressBar-Counter {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  margin: 0;
+
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.ProgressBar-Progress {
+  height: inherit;
+
+  background-color: #FF8530;
+}
