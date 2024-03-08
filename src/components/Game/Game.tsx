@@ -81,7 +81,7 @@ const Game = () => {
         <Button 
           onClick={handleUpdateGame}
           variant="outlined">
-          Contained
+          Играть!
         </Button>
       </div>
       

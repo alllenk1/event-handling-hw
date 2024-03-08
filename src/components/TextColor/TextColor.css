@@ -1,3 +1,5 @@
-.TextColor-Settings {
-  display: flex;
+.TextColor {
+  margin: 0 50px 0 8px;
+
+  width: 200px;
 }

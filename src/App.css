@@ -5,3 +5,7 @@
 .App-Task-title {
   margin-top: 1.5em;
 }
+
+.App-TextColor-block {
+  display: flex;
+}
