@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
-import type { MouseEvent } from 'react';
+import type { FC, MouseEvent } from 'react';
 
 import { cnLoader } from './Loader.classname';
 import { ProgressBar } from './ProgressBar/ProgressBar';
 
 import './Loader.css';
 
+type LoaderProps = {
+  onChange: (newProgressValue: number) => void
+}
+
 const calculatePercent = (total: number, part: number): number => {
   const currentPercent = Math.round((part * 100) / total);
   return part >= total ? 100 : currentPercent;
 }
 
-const Loader = () => {
-  const [progress, setProgress] = useState(0);
+let currentPercent: number = 0;
+
+const Loader: FC<LoaderProps> = ({ onChange }) => {
   const [isMouseActive, setMouseActive] = useState(false);
 
   const handleMouseDown = () => {
@@ -27,30 +32,20 @@ const Loader = () => {
     if (isMouseActive) {
       let currentPosition = event.clientX;
       const loaderWidth = event.currentTarget.clientWidth;
-      const currentPercent = calculatePercent(loaderWidth, currentPosition);
+      currentPercent = calculatePercent(loaderWidth, currentPosition);
 
-      setProgress(currentPercent);
+      onChange(currentPercent);
     }
   }
 
   return (
     <div className={cnLoader()}>
-      {
-        progress < 100 ? 
-          <ProgressBar 
-            progress={progress} 
-            onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
-            onMouseMove={handleMouseMove}
-          />
-        : 
-          <img 
-            className={cnLoader('Image')} 
-            src="./img/progress.jpeg" 
-            alt="100% progress" 
-            width="400"
-          />
-      } 
+      <ProgressBar 
+        progress={currentPercent} 
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+        onMouseMove={handleMouseMove}
+      />
     </div>
   )
 };

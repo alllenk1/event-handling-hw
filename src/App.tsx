@@ -23,8 +23,12 @@ const DEFAULT_BACKGROUNDCOLOR = {
 }
 
 const App = () => {
+  const [progress, setProgress] = useState(0);
   const [color, setColor] = useState(DEFAULT_COLOR);
   const [backgroundColor, setBackgroundColor] = useState(DEFAULT_BACKGROUNDCOLOR);
+  
+  const handleProgress = (newProgressValue: number) => 
+    setProgress(newProgressValue)
   
   const handleColor = (colorName: string, colorValue: number) => {    
     setColor((prev) => ({
@@ -45,7 +49,11 @@ const App = () => {
       <h1 className={cnApp('Title')}>8.2 Обработка событий в React (HW)</h1>
 
       <h2 className={cnApp('Task-title')}>Драг энд лоад</h2>
-        <Loader />
+        {progress < 100 ? (
+          <Loader onChange={handleProgress} />
+        ) : (
+          <img src="./img/progress.jpeg" alt="100% progress" />
+        )}
 
       <h2 className={cnApp('Task-title')}>Лапкаканы</h2>
         <Game />
