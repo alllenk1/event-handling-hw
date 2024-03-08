@@ -1,44 +1,47 @@
-import React, { FC, ChangeEvent } from 'react';
+import React from 'react';
+import type { FC, ChangeEvent } from 'react';
 
 import { cnInputRange } from './InputRange.classname';
-import { Article } from '../Article/Article';
 
 import './InputRange.css';
 
 type InputRangeProps = {
   onChange: (channel: string, event: ChangeEvent<HTMLInputElement>) => void,
-  red: number;
-  green: number;
-  blue: number;
-  alpha: number;
 }
-
-const InputRange: FC<InputRangeProps> = ({ onChange, red, green, blue, alpha }) => {
+ 
+const InputRange: FC<InputRangeProps> = ({ onChange }) => {
   return (
     <div className={cnInputRange()}>
       <div className={cnInputRange('Container')}>
-        <label className={cnInputRange('Label')}>R</label>
+        <label className={cnInputRange('Label')} htmlFor="red">R</label>
         <input 
           className={cnInputRange('Input')} 
           onChange={(event) => onChange('red', event)} 
-          type="range" />
+          name="red"
+          type="range" 
+        />
 
-        <label className={cnInputRange('Label')}>G</label>
+        <label className={cnInputRange('Label')} htmlFor="green">G</label>
         <input 
           className={cnInputRange('Input')} 
           onChange={(event) => onChange('green', event)} 
-          type="range" />
+          name="green"
+          type="range" 
+        />
 
-        <label className={cnInputRange('Label')}>B</label>
+        <label className={cnInputRange('Label')} htmlFor="blue">B</label>
         <input 
           className={cnInputRange('Input')} 
           onChange={(event) => onChange('blue', event)} 
-          type="range" />
+          name="blue"
+          type="range" 
+        />
 
-        <label className={cnInputRange('Label')}>A</label>
+        <label className={cnInputRange('Label')} htmlFor="alpha">A</label>
         <input 
           className={cnInputRange('Input')} 
-          onChange={(event) => onChange('alpha', event)} 
+          onChange={(event) => onChange('alpha', event)}
+          name="alpha"
           type="range" />
       </div>
     </div>

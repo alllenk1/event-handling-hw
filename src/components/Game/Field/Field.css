@@ -1,4 +1,4 @@
-.GameField {
+.Field {
   position: relative;
   
   height: 600px;
@@ -6,7 +6,7 @@
   border: 1px solid lightgrey;
 }
 
-.GameField-Image {
+.Field-Image {
   position: absolute;
 
   width: 50px;

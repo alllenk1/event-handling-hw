@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { Button } from '@mui/material'
 
 import { cnGame } from './Game.classname';
-import { GameField } from './GameField/GameField';
+import { Field } from './Field/Field';
 import { Stat } from './Stat/Stat';
 
 import './Game.css';
@@ -28,6 +29,8 @@ const Game = () => {
   const [startTime, setStartTime] = useState(0);
   const [finishTime, setFinishTime] = useState(0);
   const [cockroachsState, setCockroachsState] = useState<Cockroach[]>(initialCockroachs);
+
+  const totalTime = (finishTime - startTime) / 1000;
 
   const handleUpdateGame = () => {
     setCockroachsState(prev => 
@@ -67,22 +70,22 @@ const Game = () => {
     });
   };
 
-  const time = (finishTime - startTime) / 1000;
-
   return (
     <div className={cnGame()}>
-      <GameField 
+      <Field 
         start={start} 
         cockroachs={cockroachsState} 
         onClick={handleRemoveCockroach}
       />
-      <button
-        className={cnGame('Button')}
-        onClick={handleUpdateGame}>
-        Играть!
-      </button>
+      <div className={cnGame('Button')}>
+        <Button 
+          onClick={handleUpdateGame}
+          variant="outlined">
+          Contained
+        </Button>
+      </div>
       
-      {finish && <Stat time={time} />}
+      {finish && <Stat time={totalTime} />}
     </div>
   )
 };

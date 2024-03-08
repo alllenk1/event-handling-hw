@@ -5,8 +5,7 @@
 }
 
 .Game-Button {
-  display: block;
-
-  margin: 20px auto;
-  padding: 6px 16px;
+  margin-top: 15px;
+  
+  text-align: center;
 }

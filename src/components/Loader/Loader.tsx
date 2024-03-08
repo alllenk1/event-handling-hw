@@ -1,4 +1,5 @@
-import React, { MouseEvent, useState } from 'react';
+import React, { useState } from 'react';
+import type { MouseEvent } from 'react';
 
 import { cnLoader } from './Loader.classname';
 import { ProgressBar } from './ProgressBar/ProgressBar';
