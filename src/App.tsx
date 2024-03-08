@@ -52,7 +52,7 @@ const App = () => {
         {progress < 100 ? (
           <Loader onChange={handleProgress} />
         ) : (
-          <img src="./img/progress.jpeg" alt="100% progress" />
+          <img src="./img/progress.jpeg" alt="100% progress" width="400"/>
         )}
 
       <h2 className={cnApp('Task-title')}>Лапкаканы</h2>
